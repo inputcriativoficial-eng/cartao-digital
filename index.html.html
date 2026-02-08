@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão de Visita | George Batista</title>
+    
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        gold: {
+                            400: '#E5C558',
+                            500: '#D4AF37', // Premium Gold
+                            600: '#B59226',
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'slide-up': 'slideUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+            border-radius: 3px;
+        }
+
+        /* Glassmorphism Utilities */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .glass-reflection {
+            background: linear-gradient(to bottom, rgba(255,255,255,0.05), transparent);
+        }
+
+        /* Animation Delays */
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-500 { animation-delay: 500ms; }
+        .delay-700 { animation-delay: 700ms; }
+        .delay-1000 { animation-delay: 1000ms; }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+</head>
+<body class="bg-black text-white antialiased min-h-screen overflow-x-hidden flex justify-center py-8 px-4">
+
+    <!-- Background Image with Overlay -->
+    <div class="fixed inset-0 z-0">
+        <div class="absolute inset-0 bg-black/60 z-10"></div>
+        <img src="livro do mês.png" 
+             alt="Luxury Home Background" 
+             class="w-full h-full object-cover transition-transform duration-[20s] ease-linear scale-100 animate-fade-in"
+             style="animation-duration: 2s;">
+    </div>
+
+    <!-- Main Content Container -->
+    <main class="relative z-10 w-full max-w-sm mx-auto">
+        <div class="glass-panel rounded-2xl overflow-hidden relative opacity-0 animate-slide-up">
+            <!-- Glossy Reflection -->
+            <div class="glass-reflection absolute top-0 left-0 w-full h-1/2 pointer-events-none"></div>
+
+            <!-- Profile Section -->
+            <div class="flex flex-col items-center text-center p-6 pb-2 relative z-10">
+                <div class="relative group cursor-pointer mb-4">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-500"></div>
+                    <img src="george.png" 
+                         alt="George Batista" 
+                         class="relative w-28 h-28 rounded-full border-4 border-gold-500 object-cover shadow-2xl transform transition-transform duration-300 group-hover:scale-105">
+                </div>
+                
+                <h1 class="text-2xl font-bold text-white tracking-wide">George Batista</h1>
+                <h2 class="text-gold-500 font-medium text-sm uppercase tracking-widest mb-3">Transformo ideias em identidades que comunicam e vendem.</h2>
+                
+                <p class="text-gray-300 text-sm max-w-xs leading-relaxed font-light italic">
+                    ""
+                </p>
+            </div>
+
+            <!-- Divider -->
+            <div class="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent my-2"></div>
+
+            <!-- Action Grid Buttons -->
+            <div class="grid grid-cols-2 gap-4 w-full px-6 py-4">
+                <!-- WhatsApp -->
+                <a href="https://wa.me/5585987784930"target="_blank"class="group flex flex-col items-center justify-center p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-gold-500/50 transition-all duration-300 transform hover:scale-105 active:scale-95 opacity-0 animate-slide-up delay-100">
+                    <i class="fa-brands fa-whatsapp text-2xl text-gold-500 mb-2 group-hover:text-white transition-colors"></i>
+                    <span class="text-sm font-medium text-gray-200 group-hover:text-white">WhatsApp</span>
+                </a>
+                
+                <!-- Location -->
+                <a href="#" class="group flex flex-col items-center justify-center p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-gold-500/50 transition-all duration-300 transform hover:scale-105 active:scale-95 opacity-0 animate-slide-up delay-200">
+                    <i class="fa-solid fa-location-dot text-2xl text-gold-500 mb-2 group-hover:text-white transition-colors"></i>
+                    <span class="text-sm font-medium text-gray-200 group-hover:text-white">Localização</span>
+                </a>
+
+                <!-- Email -->
+                <a href="mailto:inputcriativoficial@gmail.com" class="group flex flex-col items-center justify-center p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-gold-500/50 transition-all duration-300 transform hover:scale-105 active:scale-95 opacity-0 animate-slide-up delay-300">
+                    <i class="fa-regular fa-envelope text-2xl text-gold-500 mb-2 group-hover:text-white transition-colors"></i>
+                    <span class="text-sm font-medium text-gray-200 group-hover:text-white">E-mail</span>
+                </a>
+
+                <!-- Website -->
+                <a href="https://www.inputcriativo.com.br/" target="_blank" class="group flex flex-col items-center justify-center p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all">
+    <i class="fa-solid fa-globe text-2xl text-gold-500 mb-2 group-hover:text-white transition-colors"></i>
+    <span class="text-sm font-medium text-gray-200 group-hover:text-white">Website</span>
+</a>
+            </div>
+
+            <!-- Save Contact Button -->
+            <div class="px-6 py-2 w-full opacity-0 animate-slide-up delay-500">
+                <button onclick="saveContact()" class="w-full relative overflow-hidden group bg-gold-500 text-black font-bold py-4 rounded-xl shadow-lg shadow-gold-500/20 transform transition-all duration-300 hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-3">
+                    <div class="absolute inset-0 w-full h-full bg-white/20 skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
+                    <i class="fa-solid fa-user-plus text-lg"></i>
+                    <span class="tracking-wider text-sm uppercase">Salvar na Agenda</span>
+                </button>
+            </div>
+
+            <!-- Featured Property -->
+            <div class="px-6 py-6 w-full opacity-0 animate-slide-up delay-700">
+                <div class="bg-black/30 rounded-xl overflow-hidden border border-white/10 hover:border-gold-500/30 transition-colors group cursor-pointer">
+                    <div class="px-4 py-2 flex items-center justify-between border-b border-white/5">
+                        <span class="text-xs font-semibold text-gold-500 uppercase tracking-wider flex items-center gap-1">
+                            <i class="fa-solid fa-star text-[10px]"></i>
+                            Oportunidade do Mês
+                        </span>
+                    </div>
+                    
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="Marmitas fitnes.png" 
+                             alt="Marmitas fitnes" 
+                             class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 to-transparent p-4">
+                            <h3 class="text-white font-bold text-lg">EBOOK DO MÊS</h3>
+                            <p className="text-gray-300 text-xs">Marmitas fitnes</p>
+                        </div>
+                    </div>
+
+                    <div class="w-full py-3 bg-white/5 hover:bg-white/10 text-white text-xs uppercase tracking-widest font-medium flex items-center justify-center gap-2 transition-colors">
+                        Ver Detalhes
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="mt-4 pb-8 flex flex-col items-center gap-4 text-center opacity-0 animate-slide-up delay-1000">
+                <div class="flex gap-6">
+                    <a href="#" class="text-gray-400 hover:text-gold-500 transition-colors transform hover:scale-110">
+                        <i class="fa-brands fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gold-500 transition-colors transform hover:scale-110">
+                        <i class="fa-brands fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gold-500 transition-colors transform hover:scale-110">
+                        <i class="fa-brands fa-facebook text-xl"></i>
+                    </a>
+                </div>
+                <p class="text-[10px] text-gray-500 uppercase tracking-widest">
+                    © 2024 George B. Vallent Todos os direitos reservados.
+                </p>
+            </footer>
+        </div>
+    </main>
+
+    <!-- Logic -->
+    <script>
+        function saveContact() {
+            // vCard Content
+            const vCardData = [
+                'BEGIN:VCARD',
+                'VERSION:3.0',
+                'FN:George Batista',
+                'ORG:LuxEstate',
+                'TITLE:Criador de iforprodutos',
+                'TEL;TYPE=CELL:+5585987784930',
+                'EMAIL:georgebatistakm@gmail.com',
+                'URL:https://',
+                'END:VCARD'
+            ].join('\n');
+            
+            // Create Blob and Download Link
+            const blob = new Blob([vCardData], { type: 'text/vcard' });
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'RicardoSilva.vcf');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Add slow zoom effect to background on load
+        window.addEventListener('load', () => {
+            const bg = document.querySelector('img[alt="Luxury Home Background"]');
+            if(bg) {
+                bg.classList.add('scale-110');
+            }
+        });
+    </script>
+</body>
+</html>
